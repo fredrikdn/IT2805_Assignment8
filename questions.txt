@@ -27,5 +27,5 @@ for (let i = 0; i < countries.length; i++) {
 This is the more terse way: 
 
 const countries = ['Norway', 'Sweden', 'Denmark', 'New Zealand'];
-const countriesStartingWithN = countries.filter((country) => country.startsWith('N'))
+const countriesStartingWithN = countries.filter(country => country.startsWith('N'));
 
