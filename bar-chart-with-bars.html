@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Tax forms: Bar chart with lines</title>
+    <title>Tax forms: Bar chart with bars</title>
     <meta charset="UTF-8">
     <script src="taxForms.js"></script>
 </head>
@@ -49,7 +49,7 @@
             context.stroke();
             context.closePath();
         }
-        
+
         //position the box at a position
         function createBox(x, y, color, sizeX, sizeY) {
             n = 1000 / 750
@@ -68,11 +68,23 @@
             context.fillText(text, x, y, 100, 100);
             context.closePath();
         }
+
         //initialize the boxes and the text
         createBox(1010, 40, "red", 30, 20);
         createBox(1010, 90, "blue", 30, 20);
         createText(1055, 65, "Income");
         createText(1055, 115, "Wealth");
+
+        // Part 4
+        //calculate the income and wealth of each hero and draw them on the table
+        for (let i = 0; i <= taxForms.length - 1; i++) {
+            let income = taxForms[i].income
+            let wealth = taxForms[i].wealth
+            console.log(income)
+            createBox(i * 200 + 165, 790, "red", 50, (-income / 2350 * n))
+            createBox(i * 200 + 232, 790, "blue", 50, (-wealth / 2350 * n))
+            console.log(wealth)
+        }
 
     </script>
 </body>
